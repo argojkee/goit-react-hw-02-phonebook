@@ -1,0 +1,33 @@
+import ContactItem from './ContactItem';
+import PropTypes from 'prop-types';
+import ContactsListStyled from './ContactsListStyle.styled';
+
+const ContactList = ({ contacts, filter, handleDeleteUser }) => {
+  return (
+    <ContactsListStyled>
+      {contacts
+        .filter(
+          contact =>
+            contact.name.toLowerCase().includes(filter.toLowerCase()) ||
+            contact.number.toLowerCase().includes(filter.toLowerCase())
+        )
+        .map(contact => (
+          <ContactItem
+            handleDeleteUser={handleDeleteUser}
+            userName={contact.name}
+            userNumber={contact.number}
+            id={contact.id}
+            key={contact.id}
+          />
+        ))}
+    </ContactsListStyled>
+  );
+};
+
+export default ContactList;
+
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  filter: PropTypes.string,
+  handleDeleteUser: PropTypes.func,
+};
