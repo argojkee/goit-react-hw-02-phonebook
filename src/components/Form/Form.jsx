@@ -15,10 +15,6 @@ class Form extends Component {
   handlerSubmitForm = e => {
     e.preventDefault();
 
-    justForCommit = () => {
-      console.log('Hello');
-    };
-
     if (
       this.props.contacts.some(
         contact => contact.name.toLowerCase() === this.state.name.toLowerCase()

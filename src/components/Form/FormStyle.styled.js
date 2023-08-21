@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import Form from './Form';
 
 const FormStyle = styled.form`
   display: flex;
