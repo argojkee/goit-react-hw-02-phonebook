@@ -27,7 +27,13 @@ const ContactList = ({ contacts, filter, handleDeleteUser }) => {
 export default ContactList;
 
 ContactList.propTypes = {
-  contacts: PropTypes.array,
-  filter: PropTypes.string,
-  handleDeleteUser: PropTypes.func,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  filter: PropTypes.string.isRequired,
+  handleDeleteUser: PropTypes.func.isRequired,
 };

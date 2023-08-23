@@ -70,8 +70,12 @@ class Form extends Component {
 export default Form;
 
 Form.propTypes = {
-  createUser: PropTypes.func,
+  createUser: PropTypes.func.isRequired,
   userName: PropTypes.string,
   userNumber: PropTypes.string,
-  contacts: PropTypes.array,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

@@ -16,5 +16,5 @@ DeleteContactButton.propTypes = {
   userName: PropTypes.string,
   userNumber: PropTypes.string,
   id: PropTypes.string,
-  handleDeleteUser: PropTypes.func,
+  handleDeleteUser: PropTypes.func.isRequired,
 };
