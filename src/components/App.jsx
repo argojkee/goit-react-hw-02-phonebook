@@ -54,7 +54,7 @@ export class App extends Component {
           contacts={this.state.contacts}
         />
         <p>Find contacts by name</p>
-        <SearchInput onChange={this.handlerSearch} />
+        <SearchInput onChange={this.handlerSearch} value={this.state.filter} />
 
         <h2>Contacts</h2>
         <ContactList
